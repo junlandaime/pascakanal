@@ -162,7 +162,7 @@ $site         = $konfigurasi->listing();
         <!-- Lecture -->
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-image"></i>
+            <i class="fas fa-chalkboard-teacher"></i>
             <p>Lecture &amp; Team
               <i class="fas fa-angle-left right"></i>
             </p>
@@ -192,7 +192,7 @@ $site         = $konfigurasi->listing();
         <!-- kurikulum -->
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-image"></i>
+            <i class="nav-icon fas fa-university"></i>
             <p>Kurikulum
               <i class="fas fa-angle-left right"></i>
             </p>
