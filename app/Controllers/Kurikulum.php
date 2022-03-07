@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\Konfigurasi_model;
-use App\Models\kurikulum_model;
+use App\Models\Kurikulum_model;
 use App\Models\Kategori_kurikulum_model;
 
 class kurikulum extends BaseController
@@ -13,7 +13,7 @@ class kurikulum extends BaseController
     public function index()
     {
         $m_konfigurasi     = new Konfigurasi_model();
-        $m_kurikulum        = new kurikulum_model();
+        $m_kurikulum        = new Kurikulum_model();
         $m_kategori        = new Kategori_kurikulum_model();
         $konfigurasi     = $m_konfigurasi->listing();
         $kategori         = $m_kategori->listing();
