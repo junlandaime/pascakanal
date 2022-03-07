@@ -1,9 +1,12 @@
-<?php 
+<?php
+
 use App\Models\Konfigurasi_model;
+
 $konfigurasi  = new Konfigurasi_model;
 $site         = $konfigurasi->listing();
 // Menu
 use App\Models\Menu_model;
+
 $menu         = new Menu_model();
 $site         = $konfigurasi->listing();
 $menu_berita  = $menu->berita();
@@ -11,103 +14,110 @@ $menu_profil  = $menu->profil();
 $menu_layanan  = $menu->layanan();
 ?>
 <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
+<footer id="fh5co-footer" role="contentinfo">
+  <div class="container">
+    <div class="row row-pb-md">
+      <div class="col-md-3 fh5co-widget">
+        <h4>About <?php echo $site['namaweb'] ?></h4>
+        <p><?php echo $site['deskripsi'] ?></p>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+        <h4><?php echo $site['namaweb'] ?></h4>
+        <ul class="fh5co-footer-links">
+          <?php foreach ($menu_profil as $menu_profil) { ?>
+            <li><a href="<?php echo base_url('berita/profil/' . $menu_profil['slug_berita']) ?>"><?php echo $menu_profil['judul_berita'] ?></a></li>
+          <?php } ?>
+          <li><a href="<?php echo base_url('kurikulum') ?>">Our Curicullum</a></li>
+        </ul>
+      </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3><?php echo $site['namaweb'] ?></h3>
-              <p>
-                <?php echo nl2br(strip_tags($site['alamat'])) ?>
-                <br>
-                <strong>Phone:</strong> <?php echo $site['telepon'] ?><br>
-                <strong>Email:</strong> <?php echo $site['email'] ?><br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="<?php echo $site['twitter'] ?>" class="twitter"><i class="fab fa-twitter"></i></a>
-                <a href="<?php echo $site['facebook'] ?>" class="facebook"><i class="fab fa-facebook"></i></a>
-                <a href="<?php echo $site['instagram'] ?>" class="instagram"><i class="fab fa-instagram"></i></a>
-                <a href="<?php echo $site['youtube'] ?>" class="google-plus"><i class="fab fa-youtube"></i></a>
-  
-              </div>
-            </div>
-          </div>
+      <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+        <h4>Facility</h4>
+        <ul class="fh5co-footer-links">
+          <?php foreach ($menu_layanan as $menu_layanan) { ?>
+            <li><a href="<?php echo base_url('berita/layanan/' . $menu_layanan['slug_berita']) ?>"><?php echo $menu_layanan['judul_berita'] ?></a></li>
+          <?php } ?>
+        </ul>
+      </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>About Us</h4>
-            <ul>
-              <?php foreach($menu_profil as $menu_profil) { ?>
-              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url('berita/profil/'.$menu_profil['slug_berita']) ?>"><?php echo $menu_profil['judul_berita'] ?></a></li>
-              <?php } ?>
-              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url('staff') ?>">Staff &amp; Team Kami</a></li>
-            </ul>
-          </div>
+      <div class="col-lg-4 col-md-6 footer-newsletter">
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <?php foreach($menu_layanan as $menu_layanan) { ?>
-              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url('berita/layanan/'.$menu_layanan['slug_berita']) ?>"><?php echo $menu_layanan['judul_berita'] ?></a></li>
-              <?php } ?>
-            </ul>
-          </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Find Us on Map</h4>
-            <style type="text/css" media="screen">
-              iframe {
-                width: 100%;
-                height: 200px;
-              }
-            </style>
-            <?php echo $site['google_map'] ?>
+      </div>
 
-          </div>
+      <!-- <div class="col-md-4 col-sm-4 col-xs-6 col-md-push-1">
+        <h4>Engage us</h4>
+        <ul class="fh5co-footer-links">
+          <li><a href="#">Marketing</a></li>
+          <li><a href="#">Visual Assistant</a></li>
+          <li><a href="#">System Analysis</a></li>
+          <li><a href="#">Advertise</a></li>
+        </ul>
+      </div>
 
+      <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+        <h4>Legal</h4>
+        <ul class="fh5co-footer-links">
+          <li><a href="#">Find Designers</a></li>
+          <li><a href="#">Find Developers</a></li>
+          <li><a href="#">Teams</a></li>
+          <li><a href="#">Advertise</a></li>
+          <li><a href="#">API</a></li>
+        </ul>
+      </div>
+    </div> -->
+
+      <div class="row copyright">
+        <div class="col-md-12 text-center">
+          <p>
+            <small class="block">&copy; 2021 Junlandaime. All Rights Reserved.</small>
+            <!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
+          </p>
+          <p>
+          <ul class="fh5co-social-icons">
+            <li><a href="<?php echo $site['twitter'] ?>" class="twitter"><i class="icon-twitter"></i></a></li>
+            <li><a href="<?php echo $site['facebook'] ?>" class="twitter"><i class="icon-facebook"></i></a></li>
+            <li><a href="<?php echo $site['instagram'] ?>" class="twitter"><i class="icon-instagram"></i></a></li>
+            <li><a href="<?php echo $site['youtube'] ?>" class="twitter"><i class="icon-youtube"></i></a></li>
+          </ul>
+          </p>
         </div>
       </div>
+
     </div>
+</footer>
+</div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Java Web Media</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+</div>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- jQuery -->
+<script src="<?= base_url(); ?>/assets/template/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="<?= base_url(); ?>/assets/template/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="<?= base_url(); ?>/assets/template/js/bootstrap.min.js"></script>
 
-  <!-- Vendor JS Files -->
-  <script src="<?php echo base_url() ?>/assets/template/assets/vendor/aos/aos.js"></script>
-  <script src="<?php echo base_url() ?>/assets/template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="<?php echo base_url() ?>/assets/template/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="<?php echo base_url() ?>/assets/template/assets/vendor/php-email-form/validate.js"></script>
-  <script src="<?php echo base_url() ?>/assets/template/assets/vendor/purecounter/purecounter.js"></script>
-  <script src="<?php echo base_url() ?>/assets/template/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>/assets/albumjs/js/jgallery.min.js?v=1.6.0"></script>
 
-  <!-- Template Main JS File -->
-  <script src="<?php echo base_url() ?>/assets/template/assets/js/main.js"></script>
-  <!-- DataTables  & Plugins -->
- 
-<script src="<?php echo base_url() ?>/assets/admin/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url() ?>/assets/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="<?php echo base_url() ?>/assets/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<!-- Waypoints -->
+<script src="<?= base_url(); ?>/assets/template/js/jquery.waypoints.min.js"></script>
+<!-- Stellar Parallax -->
+<script src="<?= base_url(); ?>/assets/template/js/jquery.stellar.min.js"></script>
+<!-- Carousel -->
+<script src="<?= base_url(); ?>/assets/template/js/owl.carousel.min.js"></script>
+<!-- countTo -->
+<script src="<?= base_url(); ?>/assets/template/js/jquery.countTo.js"></script>
+<!-- Magnific Popup -->
+<script src="<?= base_url(); ?>/assets/template/js/jquery.magnific-popup.min.js"></script>
+<script src="<?= base_url(); ?>/assets/template/js/magnific-popup-options.js"></script>
 
-<script>
-  $(function () {
-    $('#example1').DataTable();
-  });
-  </script>
+<!-- Main -->
+<script src="<?= base_url(); ?>/assets/template/js/main.js"></script>
+
+
+
 </body>
 
 </html>

@@ -1,134 +1,187 @@
-<?php 
+<?php
+
 use App\Models\Menu_model;
+
 $menu         = new Menu_model();
 $berita       = $menu->berita();
 $profil       = $menu->profil();
 $layanan      = $menu->layanan();
 ?>
 
-<!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
-      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-      <div class="carousel-inner" role="listbox">
-        <?php $noslide=1; foreach($slider as $slider) {  ?>
-        <!-- Slide 1 -->
-        <div class="carousel-item<?php if($noslide==1) { echo ' active'; } ?>" style="background-image: url(<?php echo base_url('assets/upload/image/'.$slider['gambar']) ?>)">
-          <?php if($slider['status_text']=="Ya") {  ?>
-          <div class="container" style="max-width: 70%; text-align: left; padding-left: 2%; padding-right: 2%;">
-                <h2><?php echo $slider['judul_galeri'] ?></h2>
-                <p><?php echo $slider['isi'] ?></p>
-                <a href="<?php echo $slider['website'] ?>" class="btn-get-started scrollto">Read More</a>
-            </div>
-          <?php } ?>
-        </div>
-        <?php $noslide++;} ?>
-
-      </div>
-
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
-
-    </div>
-  </section><!-- End Hero -->
+<!-- ======= Header ======= -->
 
 
-  <main id="main">
+<?php foreach ($slider as $slide) { ?>
+  <?php if ($slide['judul_galeri'] == 'SlideHome') { ?>
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-      <div class="container" data-aos="fade-up">
-
+    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(<?php echo base_url('assets/upload/image/' . $slide['gambar']) ?>);" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
         <div class="row">
-          <?php $pr = 1; foreach($profil as $profil) { ?>
-          <div class="col-md-6 col-lg-4 text-center d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="<?php echo $pr ?>00">
-              <div class="icon"><i class="<?php echo $profil['icon'] ?>"></i></div>
-              <h4 class="title"><a href="<?php echo base_url('berita/profil/'.$profil['slug_berita']) ?>"><?php echo $profil['judul_berita'] ?></a></h4>
-              <p class="description"><?php echo $profil['ringkasan'] ?></p>
+          <div class="col-md-8 col-md-offset-2 text-center">
+            <div class="display-t">
+              <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                <h1><?php echo $slide['isi'] ?></h1>
+                <!-- <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2> -->
+                <p><a class="btn btn-primary btn-lg btn-learn" href="#">Get Started</a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://vimeo.com/channels/staffpicks/93951774"><i class="icon-book"></i> Curicullum</a></p>
+              </div>
             </div>
           </div>
-          <?php $pr++; } ?>
-</div>
+        </div>
       </div>
-    </section><!-- End Featured Services Section -->
+    </header>
 
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container" data-aos="zoom-in">
+  <?php } ?>
+<?php } ?>
 
-        <div class="text-center">
-          <h3>Selamat datang di <?php echo $konfigurasi['namaweb'] ?></h3>
+
+<!-- End Header -->
+<!-- ======= Hero Section ======= -->
+
+<!-- End Hero -->
+
+<div id="fh5co-counter" class="fh5co-counters">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 text-center animate-box">
+        <span class="fh5co-counter js-counter" data-from="0" data-to="40356" data-speed="5000" data-refresh-interval="50"></span>
+        <span class="fh5co-counter-label">Students</span>
+      </div>
+      <div class="col-md-3 text-center animate-box">
+        <span class="fh5co-counter js-counter" data-from="0" data-to="30290" data-speed="5000" data-refresh-interval="50"></span>
+        <span class="fh5co-counter-label">Courses</span>
+      </div>
+      <div class="col-md-3 text-center animate-box">
+        <span class="fh5co-counter js-counter" data-from="0" data-to="2039" data-speed="5000" data-refresh-interval="50"></span>
+        <span class="fh5co-counter-label">Instructor</span>
+      </div>
+      <div class="col-md-3 text-center animate-box">
+        <span class="fh5co-counter js-counter" data-from="0" data-to="997585" data-speed="5000" data-refresh-interval="50"></span>
+        <span class="fh5co-counter-label">Earnings</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <div id="fh5co-explore" class="fh5co-bg-section">
+    <div class="container">
+      <div class="row animate-box">
+        <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+          <h2>Selamat datang di <?php echo $konfigurasi['namaweb'] ?></h2>
           <p><?php echo $konfigurasi['tagline'] ?></p>
         </div>
-
       </div>
-    </section><!-- End Cta Section -->
-
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About <?php echo $konfigurasi['namaweb'] ?></h2>
-         <?php echo $konfigurasi['deskripsi'] ?>
-        </div>
-
+    </div>
+    <div class="fh5co-explore fh5co-explore1">
+      <div class="container">
         <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="<?php echo icon() ?>" class="img-fluid" alt="">
+          <div class="col-md-8 col-md-push-5 animate-box">
+            <?php foreach ($slider as $slide) { ?>
+              <?php if ($slide['judul_galeri'] == 'Roadmap1') { ?>
+                <img class="img-responsive" src="<?php echo base_url('assets/upload/image/' . $slide['gambar']) ?>" alt="work">
+
           </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <?php echo $konfigurasi['tentang'] ?>
+          <div class="col-md-4 col-md-pull-8 animate-box">
+            <div class="mt">
+              <h3><?php echo $slide['isi'] ?></h3>
+            <?php } ?>
+          <?php } ?>
+          <?php foreach ($slider as $slide) { ?>
+            <?php if ($slide['judul_galeri'] == 'Roadmap2') { ?>
+              <p><?php echo $slide['isi'] ?></p>
+              <p><img src="<?php echo base_url('assets/upload/image/' . $slide['gambar']) ?>" class="img img-thumbnail" alt=""></p>
+            <?php } ?>
+          <?php } ?>
+          <!-- <p><a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://vimeo.com/channels/staffpicks/93951774"><i class="icon-play"></i> Watch Video</a></p> -->
+            </div>
           </div>
         </div>
-
       </div>
-    </section><!-- End About Us Section -->
+    </div>
 
-  
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services services">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Layanan Kami</h2>
-          <p>Yuk gunakan layanan yang ada di <?php echo namaweb() ?>. <?php echo tagline() ?></p>
-        </div>
-
+    <div class="fh5co-explore">
+      <div class="container">
         <div class="row">
-          <?php $ml = 1; foreach($layanan as $layanan) { ?>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="<?php echo $ml; ?>00">
-            <div class="icon"><i class="<?php echo $layanan['icon'] ?>"></i></div>
-            <h4 class="title"><a href="<?php echo base_url('berita/layanan/'.$layanan['slug_berita']) ?>"><?php echo $layanan['judul_berita'] ?></a></h4>
-            <p class="description"><?php echo $layanan['ringkasan'] ?></p>
+          <div class="col-md-8 col-md-pull-1 animate-box">
+            <?php foreach ($slider as $slide) { ?>
+              <?php if ($slide['judul_galeri'] == 'Roadmap3') { ?>
+                <img class="img-responsive" src="<?php echo base_url('assets/upload/image/' . $slide['gambar']) ?>" alt="work">
           </div>
-          <?php $ml++; } ?>
+          <div class="col-md-4 animate-box">
+            <div class="mt">
+              <div>
+                <h4></i><?php echo $slide['isi'] ?></h4>
+              <?php } ?>
+            <?php } ?>
+            <?php foreach ($slider as $slide) { ?>
+              <?php if ($slide['judul_galeri'] == 'Roadmap4') { ?>
+                <p><?php echo $slide['isi'] ?></p>
+                <p><img src="<?php echo base_url('assets/upload/image/' . $slide['gambar']) ?>" class="img img-thumbnail" alt=""></p>
+              </div>
+            <?php } ?>
+          <?php } ?>
+
+            </div>
+          </div>
         </div>
-
       </div>
-    </section><!-- End Services Section -->
+    </div>
+  </div>
 
-    <?php include('berita.php') ?>
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div>
-        <style type="text/css" media="screen">
-          iframe {
-            min-height: 300px;
-            width: 100%;
-          }
-        </style>
-        <?php echo google_map() ?>
+  <!-- ======= Featured Services Section ======= -->
+  <!-- End Featured Services Section -->
+
+  <!-- ======= Cta Section ======= -->
+
+  <!-- End Cta Section -->
+
+  <!-- ======= About Us Section ======= -->
+  <!-- End About Us Section -->
+
+
+
+  <!-- ======= Services Section ======= -->
+  <div id="fh5co-project">
+    <div class="container">
+      <div class="row animate-box">
+        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+          <h2>Our People</h2>
+          <p>Bisa diisi dengan kalimat pembuka terkait orang-orang kami.</p>
+        </div>
       </div>
-    </section><!-- End Contact Section -->
+    </div>
+    <div class="container-fluid proj-bottom">
+      <div class="row">
+        <?php $pr = 1;
+        foreach ($profil as $profi) { ?>
+          <div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+            <a href="<?php echo base_url('berita/profil/' . $profi['slug_berita']) ?>"><img style="width: 100%; height: 300px;" src="<?php echo base_url('assets/upload/image/' . $profi['gambar']) ?>" alt="" class="img-responsive">
+              <h3><?php echo $profi['judul_berita'] ?></h3>
+              <span>View</span>
+            </a>
+          </div>
+        <?php $pr++;
+        } ?>
+      </div>
+    </div>
+
+  </div>
+  <!-- End Services Section -->
+
+  <?php include('berita.php') ?>
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div>
+      <style type="text/css" media="screen">
+        iframe {
+          min-height: 300px;
+          width: 100%;
+        }
+      </style>
+      <?php echo google_map() ?>
+    </div>
+  </section><!-- End Contact Section -->
 </main><!-- End #main -->

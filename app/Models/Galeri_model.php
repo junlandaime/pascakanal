@@ -1,11 +1,13 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
 class Galeri_model extends Model
 {
 
-	protected $table = 'galeri';
+    protected $table = 'galeri';
     protected $primaryKey = 'id_galeri';
     protected $allowedFields = [];
 
@@ -14,9 +16,9 @@ class Galeri_model extends Model
     {
         $builder = $this->db->table('galeri');
         $builder->select('galeri.*, kategori_galeri.nama_kategori_galeri, kategori_galeri.slug_kategori_galeri, users.nama');
-        $builder->join('kategori_galeri','kategori_galeri.id_kategori_galeri = galeri.id_kategori_galeri','LEFT');
-        $builder->join('users','users.id_user = galeri.id_user','LEFT');
-        $builder->orderBy('galeri.id_galeri','DESC');
+        $builder->join('kategori_galeri', 'kategori_galeri.id_kategori_galeri = galeri.id_kategori_galeri', 'LEFT');
+        $builder->join('users', 'users.id_user = galeri.id_user', 'LEFT');
+        $builder->orderBy('galeri.id_galeri', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();
     }
@@ -34,10 +36,10 @@ class Galeri_model extends Model
     {
         $builder = $this->db->table('galeri');
         $builder->select('galeri.*, kategori_galeri.nama_kategori_galeri, kategori_galeri.slug_kategori_galeri, users.nama');
-        $builder->join('kategori_galeri','kategori_galeri.id_kategori_galeri = galeri.id_kategori_galeri','LEFT');
-        $builder->join('users','users.id_user = galeri.id_user','LEFT');
-        $builder->where('galeri.id_galeri',$id_galeri);
-        $builder->orderBy('galeri.id_galeri','DESC');
+        $builder->join('kategori_galeri', 'kategori_galeri.id_kategori_galeri = galeri.id_kategori_galeri', 'LEFT');
+        $builder->join('users', 'users.id_user = galeri.id_user', 'LEFT');
+        $builder->where('galeri.id_galeri', $id_galeri);
+        $builder->orderBy('galeri.id_galeri', 'DESC');
         $query = $builder->get();
         return $query->getRowArray();
     }
@@ -53,26 +55,46 @@ class Galeri_model extends Model
     public function edit($data)
     {
         $builder = $this->db->table('galeri');
-        $builder->where('id_galeri',$data['id_galeri']);
+        $builder->where('id_galeri', $data['id_galeri']);
         $builder->update($data);
     }
-    
+
     // slider
     public function slider()
     {
         $builder = $this->db->table('galeri');
-        $builder->where('jenis_galeri','Homepage');
-        $builder->orderBy('galeri.id_galeri','DESC');
+        $builder->where('jenis_galeri', 'Homepage');
+        $builder->orderBy('galeri.id_galeri', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();
     }
 
     // galeri
+    public function galeri1()
+    {
+        $builder = $this->db->table('galeri');
+        $builder->where('jenis_galeri', 'Galeri');
+        $builder->orderBy('galeri.id_galeri', 'DESC');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+
     public function galeri()
     {
         $builder = $this->db->table('galeri');
-        $builder->where('jenis_galeri','Galeri');
-        $builder->orderBy('galeri.id_galeri','DESC');
+        $builder->select('galeri.*, kategori_galeri.nama_kategori_galeri, kategori_galeri.slug_kategori_galeri, users.nama');
+        $builder->join('kategori_galeri', 'kategori_galeri.id_kategori_galeri = galeri.id_kategori_galeri', 'LEFT');
+        $builder->join('users', 'users.id_user = galeri.id_user', 'LEFT');
+        $builder->where('jenis_galeri', 'Galeri');
+        $builder->orderBy('galeri.id_galeri', 'DESC');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+
+    public function kategori()
+    {
+        $builder = $this->db->table('kategori_galeri');
+        $builder->where('id_user', '1');
         $query = $builder->get();
         return $query->getResultArray();
     }

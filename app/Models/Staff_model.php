@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace App\Models;
 
 use CodeIgniter\Model;
@@ -6,7 +7,7 @@ use CodeIgniter\Model;
 class Staff_model extends Model
 {
 
-	protected $table = 'staff';
+    protected $table = 'staff';
     protected $primaryKey = 'id_staff';
     protected $allowedFields = [];
 
@@ -15,9 +16,9 @@ class Staff_model extends Model
     {
         $builder = $this->db->table('staff');
         $builder->select('staff.*, kategori_staff.nama_kategori_staff, kategori_staff.slug_kategori_staff, users.nama AS nama_admin');
-        $builder->join('kategori_staff','kategori_staff.id_kategori_staff = staff.id_kategori_staff','LEFT');
-        $builder->join('users','users.id_user = staff.id_user','LEFT');
-        $builder->orderBy('staff.id_staff','DESC');
+        $builder->join('kategori_staff', 'kategori_staff.id_kategori_staff = staff.id_kategori_staff', 'LEFT');
+        $builder->join('users', 'users.id_user = staff.id_user', 'LEFT');
+        $builder->orderBy('staff.id_staff', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();
     }
@@ -27,10 +28,10 @@ class Staff_model extends Model
     {
         $builder = $this->db->table('staff');
         $builder->select('staff.*, kategori_staff.nama_kategori_staff, kategori_staff.slug_kategori_staff, users.nama AS nama_admin');
-        $builder->join('kategori_staff','kategori_staff.id_kategori_staff = staff.id_kategori_staff','LEFT');
-        $builder->join('users','users.id_user = staff.id_user','LEFT');
-        $builder->where('staff.id_kategori_staff',$id_kategori_staff);
-        $builder->orderBy('staff.urutan','ASC');
+        $builder->join('kategori_staff', 'kategori_staff.id_kategori_staff = staff.id_kategori_staff', 'LEFT');
+        $builder->join('users', 'users.id_user = staff.id_user', 'LEFT');
+        $builder->where('staff.id_kategori_staff', $id_kategori_staff);
+        $builder->orderBy('staff.urutan', 'ASC');
         $query = $builder->get();
         return $query->getResultArray();
     }
@@ -39,11 +40,11 @@ class Staff_model extends Model
     public function home()
     {
         $builder = $this->db->table('staff');
-        $builder->select('staff.*, kategori_staff.nama_kategori_staff, kategori_staff.slug_kategori_staff, users.nama AS nama_admin');
-        $builder->join('kategori_staff','kategori_staff.id_kategori_staff = staff.id_kategori_staff','LEFT');
-        $builder->join('users','users.id_user = staff.id_user','LEFT');
-        $builder->where('staff.status_staff','Publish');
-        $builder->orderBy('staff.id_staff','DESC');
+        $builder->select('staff.*, kategori_staff.nama_kategori_staff, kategori_staff.slug_kategori_staff, users.nama AS nama_admin, urutan');
+        $builder->join('kategori_staff', 'kategori_staff.id_kategori_staff = staff.id_kategori_staff', 'LEFT');
+        $builder->join('users', 'users.id_user = staff.id_user', 'LEFT');
+        $builder->where('staff.status_staff', 'Publish');
+        $builder->orderBy('staff.id_staff', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();
     }
@@ -61,10 +62,10 @@ class Staff_model extends Model
     {
         $builder = $this->db->table('staff');
         $builder->select('staff.*, kategori_staff.nama_kategori_staff, kategori_staff.slug_kategori_staff, users.nama AS nama_admin');
-        $builder->join('kategori_staff','kategori_staff.id_kategori_staff = staff.id_kategori_staff','LEFT');
-        $builder->join('users','users.id_user = staff.id_user','LEFT');
-        $builder->where('staff.id_staff',$id_staff);
-        $builder->orderBy('staff.id_staff','DESC');
+        $builder->join('kategori_staff', 'kategori_staff.id_kategori_staff = staff.id_kategori_staff', 'LEFT');
+        $builder->join('users', 'users.id_user = staff.id_user', 'LEFT');
+        $builder->where('staff.id_staff', $id_staff);
+        $builder->orderBy('staff.id_staff', 'DESC');
         $query = $builder->get();
         return $query->getRowArray();
     }
@@ -80,19 +81,17 @@ class Staff_model extends Model
     public function edit($data)
     {
         $builder = $this->db->table('staff');
-        $builder->where('id_staff',$data['id_staff']);
+        $builder->where('id_staff', $data['id_staff']);
         $builder->update($data);
     }
-    
+
     // slider
     public function slider()
     {
         $builder = $this->db->table('staff');
-        $builder->where('jenis_staff','Homepage');
-        $builder->orderBy('staff.id_staff','DESC');
+        $builder->where('jenis_staff', 'Homepage');
+        $builder->orderBy('staff.id_staff', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();
     }
-
-    
 }

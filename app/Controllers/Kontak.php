@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
@@ -12,16 +13,17 @@ class Kontak extends BaseController
 	{
 		$m_konfigurasi 	= new Konfigurasi_model();
 		$m_galeri		= new Galeri_model();
-		$konfigurasi 	= $m_konfigurasi->listing();
 		$slider 		= $m_galeri->slider();
+		$konfigurasi 	= $m_konfigurasi->listing();
 
-		$data = [	'title'			=> 'Kontak Kami',
-					'description'	=> 'Kontak Kami '.$konfigurasi['namaweb'].', '.$konfigurasi['tentang'],
-					'keywords'		=> 'Kontak Kami '.$konfigurasi['namaweb'].', '.$konfigurasi['keywords'],
-					'slider'		=> $slider,
-					'konfigurasi'	=> $konfigurasi,
-					'content'		=> 'kontak/index'
-				];
-		echo view('layout/wrapper',$data);
+		$data = [
+			'title'			=> 'Kontak Kami',
+			'description'	=> 'Kontak Kami ' . $konfigurasi['namaweb'] . ', ' . $konfigurasi['tentang'],
+			'keywords'		=> 'Kontak Kami ' . $konfigurasi['namaweb'] . ', ' . $konfigurasi['keywords'],
+			'slider'		=> $slider,
+			'konfigurasi'	=> $konfigurasi,
+			'content'		=> 'kontak/index'
+		];
+		echo view('layout/wrapper', $data);
 	}
 }
