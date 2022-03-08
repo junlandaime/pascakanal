@@ -40,51 +40,46 @@ $menu_layanan  = $menu->layanan();
         </ul>
       </div>
 
-      <div class="col-lg-4 col-md-6 footer-newsletter">
 
-
-      </div>
-
-      <!-- <div class="col-md-4 col-sm-4 col-xs-6 col-md-push-1">
-        <h4>Engage us</h4>
+      <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+        <h4>Our Activity</h4>
         <ul class="fh5co-footer-links">
-          <li><a href="#">Marketing</a></li>
-          <li><a href="#">Visual Assistant</a></li>
-          <li><a href="#">System Analysis</a></li>
-          <li><a href="#">Advertise</a></li>
+          <li><a href="<?php echo base_url('galeri') ?>">Galeri Gambar</a></li>
+          <li><a href="<?php echo base_url('video') ?>">Galeri Video</a></li>
+          <li><a href="<?php echo base_url('download') ?>">Download File</a></li>
+          <li><a href="<?php echo base_url('kontak') ?>">Kontak Kami</a></li>
         </ul>
       </div>
 
       <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-        <h4>Legal</h4>
+        <h4>Find Us</h4>
         <ul class="fh5co-footer-links">
-          <li><a href="#">Find Designers</a></li>
-          <li><a href="#">Find Developers</a></li>
-          <li><a href="#">Teams</a></li>
-          <li><a href="#">Advertise</a></li>
-          <li><a href="#">API</a></li>
+          <li><a href="<?php echo $site['twitter'] ?>">Twitter</a></li>
+          <li><a href="<?php echo $site['facebook'] ?>">Facebook</a></li>
+          <li><a href="<?php echo $site['instagram'] ?>">Instagram</a></li>
+          <li><a href="<?php echo $site['youtube'] ?>">Youtube</a></li>
         </ul>
       </div>
-    </div> -->
-
-      <div class="row copyright">
-        <div class="col-md-12 text-center">
-          <p>
-            <small class="block">&copy; 2021 Junlandaime. All Rights Reserved.</small>
-            <!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
-          </p>
-          <p>
-          <ul class="fh5co-social-icons">
-            <li><a href="<?php echo $site['twitter'] ?>" class="twitter"><i class="icon-twitter"></i></a></li>
-            <li><a href="<?php echo $site['facebook'] ?>" class="twitter"><i class="icon-facebook"></i></a></li>
-            <li><a href="<?php echo $site['instagram'] ?>" class="twitter"><i class="icon-instagram"></i></a></li>
-            <li><a href="<?php echo $site['youtube'] ?>" class="twitter"><i class="icon-youtube"></i></a></li>
-          </ul>
-          </p>
-        </div>
-      </div>
-
     </div>
+
+    <div class="row copyright">
+      <div class="col-md-12 text-center">
+        <p>
+          <small class="block">&copy; 2021 Kanalnuklirid. All Rights Reserved.</small>
+          <!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
+        </p>
+        <p>
+        <ul class="fh5co-social-icons">
+          <li><a href="<?php echo $site['twitter'] ?>" class="twitter"><i class="icon-twitter"></i></a></li>
+          <li><a href="<?php echo $site['facebook'] ?>" class="twitter"><i class="icon-facebook"></i></a></li>
+          <li><a href="<?php echo $site['instagram'] ?>" class="twitter"><i class="icon-instagram"></i></a></li>
+          <li><a href="<?php echo $site['youtube'] ?>" class="twitter"><i class="icon-youtube"></i></a></li>
+        </ul>
+        </p>
+      </div>
+    </div>
+
+  </div>
 </footer>
 </div>
 

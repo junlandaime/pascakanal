@@ -36,7 +36,7 @@ $sidebar  = $m_berita->sidebar();
 
           <div class="col-md-8">
             <h1 style="margin-bottom:0px;"><a href="#"><?php echo $berita['judul_berita'] ?></a></h1>
-            <small><em>Posted by: <?php echo $berita['nama'] ?> | <?php echo tanggal_bulan_menit($berita['tanggal']) ?> | Kategori: <?php echo $berita['nama'] ?> | <?php echo $berita['hits'] ?> kali dibaca | Rating: <?php echo $berita['hits'] ?></em></small>
+            <small><em>Posted by: <?php echo $berita['nama'] ?> | <?php echo tanggal_bulan_menit($berita['tanggal_publish']) ?> | Updated: <?php echo tanggal_bulan($berita['tanggal']) ?> | <?php echo $berita['hits'] ?> kali dibaca </em></small>
             <figure>
               <img src="<?php echo base_url('assets/upload/image/' . $berita['gambar']) ?>" alt="" class="img-responsive">
             </figure>
