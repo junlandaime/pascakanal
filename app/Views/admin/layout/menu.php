@@ -130,13 +130,11 @@ $site         = $konfigurasi->listing();
         </li>
         <!-- Video -->
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="<?php echo base_url('admin/video') ?>" class="nav-link">
             <i class="nav-icon fab fa-youtube"></i>
-            <p>Data Video Youtube
-              <i class="fas fa-angle-left right"></i>
-            </p>
+            <p>Data Video Youtube </p>
           </a>
-          <ul class="nav nav-treeview">
+          <!-- <ul class="nav nav-treeview">
             <li class="nav-item">
               <a href="<?php echo base_url('admin/video') ?>" class="nav-link">
                 <i class="fas fa-table nav-icon"></i>
@@ -149,7 +147,7 @@ $site         = $konfigurasi->listing();
                 <p>Tambah Video Youtube</p>
               </a>
             </li>
-          </ul>
+          </ul> -->
         </li>
         <!-- clients dan Portfolio -->
         <li class="nav-item">
@@ -163,7 +161,7 @@ $site         = $konfigurasi->listing();
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="fas fa-chalkboard-teacher"></i>
-            <p>Lecture &amp; Team
+            <p>&nbsp; Lecture &amp; Team
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>

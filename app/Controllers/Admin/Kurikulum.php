@@ -3,7 +3,7 @@
 namespace App\Controllers\Admin;
 
 use CodeIgniter\Controller;
-use App\Models\kurikulum_model;
+use App\Models\Kurikulum_model;
 use App\Models\Kategori_kurikulum_model;
 
 class kurikulum extends BaseController
@@ -13,7 +13,7 @@ class kurikulum extends BaseController
     public function index()
     {
         checklogin();
-        $m_kurikulum             = new kurikulum_model();
+        $m_kurikulum             = new Kurikulum_model();
         $m_kategori_kurikulum     = new Kategori_kurikulum_model();
         $kurikulum                 = $m_kurikulum->listing();
         $total                 = $m_kurikulum->total();
