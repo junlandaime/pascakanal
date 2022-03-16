@@ -41,7 +41,7 @@
                   <th width="20%" style="text-align: center;">Nama</th>
                   <th width="20%" style="text-align: center;">Silabus Ringkas</th>
                   <th width="30%" style="text-align: center;">Pustaka</th>
-                  <th width="5%" style="text-align: center;">Download File Detail</th>
+                  <th width="5%" style="text-align: center;">Info Detail</th>
                 </tr>
               </thead>
               <tbody>
@@ -64,7 +64,7 @@
                     <td><?php if ($kurikulum['gambar'] == "") {
                           echo '-';
                         } else { ?>
-                        <a target="_blank" href="<?php echo base_url('assets/upload/kurikulum/' . $kurikulum['gambar']) ?>" class="btn btn-success btn-sm"><i class="fa fa-download"></i> Unduh</a>
+                        <a target="_blank" href="<?php echo base_url('kurikulum/' . $kurikulum['id_kurikulum']) ?>" class="btn btn-success btn-sm"><i class="fa fa-download"></i> Detail</a>
                       <?php } ?>
                     </td>
                   </tr>

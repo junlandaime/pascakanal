@@ -1,6 +1,6 @@
-<?php 
-echo form_open(base_url('admin/konfigurasi')); 
-echo csrf_field(); 
+<?php
+echo form_open(base_url('admin/konfigurasi'));
+echo csrf_field();
 ?>
 
 <h4>Informasi Dasar</h4>
@@ -144,6 +144,61 @@ echo csrf_field();
 		<small class="text-secondary">Alamat link akun</small>
 	</div>
 </div>
+
+<h4>Data Tambahan Tampilan Home</h4>
+<hr>
+<div class="form-group row">
+	<label class="col-3">Kolom 1 <i class="fas fa-sort-numeric-up"></i></label>
+	<div class="col-3">
+		<input type="text" name="kolom1" class="form-control" value="<?php echo $konfigurasi['kolom1'] ?>">
+		<small class="text-secondary">Kolom 1</small>
+	</div>
+	<div class="col-3">
+		<input type="number" name="num1" class="form-control" value="<?php echo $konfigurasi['num1'] ?>">
+		<small class="text-secondary">Jumlah</small>
+	</div>
+	<div class="col-3">
+		<input type="text" name="numalbum" class="form-control" value="<?php echo $konfigurasi['numalbum'] ?>">
+		<small class="text-secondary">Number Album</small>
+	</div>
+</div>
+
+<div class="form-group row">
+	<label class="col-3">Kolom 2 <i class="fas fa-sort-numeric-up"></i></label>
+	<div class="col-3">
+		<input type="text" name="kolom2" class="form-control" value="<?php echo $konfigurasi['kolom2'] ?>">
+		<small class="text-secondary">Kolom 2</small>
+	</div>
+	<div class="col-6">
+		<input type="text" name="num2" class="form-control" value="<?php echo $konfigurasi['num2'] ?>">
+		<small class="text-secondary">Jumlah</small>
+	</div>
+</div>
+
+<div class="form-group row">
+	<label class="col-3">Kolom 3 <i class="fas fa-sort-numeric-up"></i></label>
+	<div class="col-3">
+		<input type="text" name="kolom3" class="form-control" value="<?php echo $konfigurasi['kolom3'] ?>">
+		<small class="text-secondary">Kolom 3</small>
+	</div>
+	<div class="col-6">
+		<input type="text" name="num3" class="form-control" value="<?php echo $konfigurasi['num3'] ?>">
+		<small class="text-secondary">Jumlah</small>
+	</div>
+</div>
+
+<div class="form-group row">
+	<label class="col-3">Kolom 4 <i class="fas fa-sort-numeric-up"></i></label>
+	<div class="col-3">
+		<input type="text" name="kolom4" class="form-control" value="<?php echo $konfigurasi['kolom4'] ?>">
+		<small class="text-secondary">Kolom 4</small>
+	</div>
+	<div class="col-6">
+		<input type="text" name="num4" class="form-control" value="<?php echo $konfigurasi['num4'] ?>">
+		<small class="text-secondary">Jumlah</small>
+	</div>
+</div>
+
 
 <div class="form-group row">
 	<label class="col-3"></label>

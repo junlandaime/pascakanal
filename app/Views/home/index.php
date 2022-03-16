@@ -44,20 +44,20 @@ $layanan      = $menu->layanan();
   <div class="container">
     <div class="row">
       <div class="col-md-3 text-center animate-box">
-        <span class="fh5co-counter js-counter" data-from="0" data-to="40356" data-speed="5000" data-refresh-interval="50"></span>
-        <span class="fh5co-counter-label">Students</span>
+        <span class="fh5co-counter js-counter" data-from="0" data-to="<?php echo $konfigurasi['num1'] ?>" data-speed="5000" data-refresh-interval="50"></span>
+        <span class="fh5co-counter-label"><?php echo $konfigurasi['kolom1'] ?></span>
       </div>
       <div class="col-md-3 text-center animate-box">
-        <span class="fh5co-counter js-counter" data-from="0" data-to="30290" data-speed="5000" data-refresh-interval="50"></span>
-        <span class="fh5co-counter-label">Courses</span>
+        <span class="fh5co-counter js-counter" data-from="0" data-to="<?php echo $konfigurasi['num2'] ?>" data-speed="5000" data-refresh-interval="50"></span>
+        <span class="fh5co-counter-label"><?php echo $konfigurasi['kolom2'] ?></span>
       </div>
       <div class="col-md-3 text-center animate-box">
-        <span class="fh5co-counter js-counter" data-from="0" data-to="2039" data-speed="5000" data-refresh-interval="50"></span>
-        <span class="fh5co-counter-label">Instructor</span>
+        <span class="fh5co-counter js-counter" data-from="0" data-to="<?php echo $konfigurasi['num3'] ?>" data-speed="5000" data-refresh-interval="50"></span>
+        <span class="fh5co-counter-label"><?php echo $konfigurasi['kolom3'] ?></span>
       </div>
       <div class="col-md-3 text-center animate-box">
-        <span class="fh5co-counter js-counter" data-from="0" data-to="997585" data-speed="5000" data-refresh-interval="50"></span>
-        <span class="fh5co-counter-label">Earnings</span>
+        <span class="fh5co-counter js-counter" data-from="0" data-to="<?php echo $konfigurasi['num4'] ?>" data-speed="5000" data-refresh-interval="50"></span>
+        <span class="fh5co-counter-label"><?php echo $konfigurasi['kolom4'] ?></span>
       </div>
     </div>
   </div>

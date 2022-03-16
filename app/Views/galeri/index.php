@@ -41,7 +41,7 @@
 
 
           <?php $i = 0 ?>
-          <?php while ($i <= 2) { ?>
+          <?php while ($i <= $konfigurasi['numalbum']) { ?>
 
             <div class="album" data-jgallery-album-title="<?php echo $kategori[$i]['nama_kategori_galeri'] ?>">
 
