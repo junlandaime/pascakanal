@@ -18,7 +18,7 @@ class Lecture_model extends Model
         $builder->select('lecture.*, kategori_lecture.nama_kategori_lecture, kategori_lecture.slug_kategori_lecture, users.nama AS nama_admin');
         $builder->join('kategori_lecture', 'kategori_lecture.id_kategori_lecture = lecture.id_kategori_lecture', 'LEFT');
         $builder->join('users', 'users.id_user = lecture.id_user', 'LEFT');
-        $builder->orderBy('lecture.id_lecture', 'DESC');
+        $builder->orderBy('nama', 'ASC');
         $query = $builder->get();
         return $query->getResultArray();
     }
@@ -101,7 +101,7 @@ class Lecture_model extends Model
         $builder->select('lecture.*, kategori_lecture.nama_kategori_lecture, kategori_lecture.slug_kategori_lecture, users.nama AS nama_admin');
         $builder->join('kategori_lecture', 'kategori_lecture.id_kategori_lecture = lecture.id_kategori_lecture', 'LEFT');
         $builder->join('users', 'users.id_user = lecture.id_user', 'LEFT');
-        $builder->orderBy('lecture.id_lecture', 'DESC');
+        $builder->orderBy('nama', 'ASC');
         $query = $builder->get();
         return $query->getResultArray();
     }
