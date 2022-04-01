@@ -139,13 +139,13 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <?php $i = $lecture['id_lecture'] ?>
+                      <?php $i = $lecture['slug_nama'] ?>
                       <?php $l = $lecture['nama_kategori_lecture'] ?>
                       <?php foreach ($lektor as $lec) : ?>
                         <?php if ($lec['nama_kategori_lecture'] == $l) : ?>
                           <tr>
-                            <td <?php if ($i == $lec["id_lecture"]) : ?> class="active" <?php endif ?>>
-                              <a href="<?php echo base_url('lecture/' . $lec['id_lecture']) ?>"><?= $lec['nama']; ?>
+                            <td <?php if ($i == $lec["slug_nama"]) : ?> class="active" <?php endif ?>>
+                              <a href="<?php echo base_url('lecture/' . $lec['slug_nama']) ?>"><?= $lec['nama']; ?>
                               <?php endif ?>
                             </td>
                           </tr>
