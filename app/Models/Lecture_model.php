@@ -58,14 +58,14 @@ class Lecture_model extends Model
     }
 
     // detail
-    public function detail($id_lecture)
+    public function detail($slug_nama)
     {
         $builder = $this->db->table('lecture');
         $builder->select('lecture.*, kategori_lecture.nama_kategori_lecture, kategori_lecture.slug_kategori_lecture, users.nama AS nama_admin');
         $builder->join('kategori_lecture', 'kategori_lecture.id_kategori_lecture = lecture.id_kategori_lecture', 'LEFT');
         $builder->join('users', 'users.id_user = lecture.id_user', 'LEFT');
-        $builder->where('lecture.id_lecture', $id_lecture);
-        $builder->orderBy('lecture.id_lecture', 'DESC');
+        $builder->where('lecture.slug_nama', $slug_nama);
+        $builder->orderBy('lecture.slug_nama', 'DESC');
         $query = $builder->get();
         return $query->getRowArray();
     }

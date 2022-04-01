@@ -11,7 +11,7 @@ use App\Models\Galeri_model;
 class Lecture extends BaseController
 {
     // lecture
-    public function index($id_lecture)
+    public function index($slug_nama)
     {
         $m_konfigurasi       = new Konfigurasi_model();
         $m_lecture           = new lecture_model();
@@ -20,7 +20,7 @@ class Lecture extends BaseController
         $slider         = $m_galeri->slider();
         $konfigurasi     = $m_konfigurasi->listing();
         $kategori         = $m_kategori->listing();
-        $lecture           = $m_lecture->detail($id_lecture);
+        $lecture           = $m_lecture->detail($slug_nama);
         $lektor             = $m_lecture->listing();
 
         $data = [

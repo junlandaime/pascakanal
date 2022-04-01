@@ -45,7 +45,7 @@
                 <?php foreach ($lecture as $lec) : ?>
                   <?php if ($lec["nama_kategori_lecture"] == $title) : ?>
                     <th scope="row"><?= $i; ?></th>
-                    <td><b><a href="<?php echo base_url('lecture/' . $lec['id_lecture']) ?>"><?= $lec['nama']; ?></b> <br> <img src="<?php echo base_url('assets/upload/lecture/' . $lec['gambar']) ?>" style="width: 50%; height: auto;" class="img img-thumbnail" alt=""></td>
+                    <td><b><a href="<?php echo base_url('lecture/' . $lec['slug_nama']) ?>"><?= $lec['nama']; ?></b> <br> <img src="<?php echo base_url('assets/upload/lecture/' . $lec['gambar']) ?>" style="width: 50%; height: auto;" class="img img-thumbnail" alt=""></td>
                     <td>
                       <?php echo $lec['pendidikan'] ?>
                     </td>
