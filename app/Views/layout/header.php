@@ -60,7 +60,7 @@ $menu_layanan  = $menu->layanan();
               </li>
 
               <li class="has-dropdown">
-                <a href="#">Fasilitas</a>
+                <a href="#">Facilities</a>
                 <ul class="dropdown">
                   <?php foreach ($menu_layanan as $menu_layanan) { ?>
                     <li><a href="<?php echo base_url('berita/layanan/' . $menu_layanan['slug_berita']) ?>"><?php echo $menu_layanan['judul_berita'] ?></a></li>

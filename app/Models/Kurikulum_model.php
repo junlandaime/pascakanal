@@ -70,6 +70,18 @@ class kurikulum_model extends Model
         return $query->getRowArray();
     }
 
+    public function detail2($slug_namam)
+    {
+        $builder = $this->db->table('kurikulum');
+        $builder->select('kurikulum.*, kategori_kurikulum.nama_kategori_kurikulum, kategori_kurikulum.slug_kategori_kurikulum, users.nama AS nama_admin');
+        $builder->join('kategori_kurikulum', 'kategori_kurikulum.id_kategori_kurikulum = kurikulum.id_kategori_kurikulum', 'LEFT');
+        $builder->join('users', 'users.id_user = kurikulum.id_user', 'LEFT');
+        $builder->where('kurikulum.slug_namam', $slug_namam);
+        $builder->orderBy('kurikulum.id_kurikulum', 'DESC');
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+
     // tambah
     public function tambah($data)
     {

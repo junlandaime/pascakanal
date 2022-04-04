@@ -61,6 +61,9 @@
 		<div class="col-5">
 			<input type="file" name="gambar" class="form-control" placeholder="gambar" value="<?php echo $kurikulum['gambar'] ?>">
 		</div>
+		<div class="col-3">
+			<input type="number" name="tahun" class="form-control" placeholder="Tahun Silabus" value="<?php echo $kurikulum['tahun'] ?>">
+		</div>
 	</div>
 
 	<div class="form-group row">
@@ -122,6 +125,13 @@
 		<label class="col-3">Catatan Tambahan</label>
 		<div class="col-9">
 			<textarea name="tambahan" placeholder="Catatan Tambahan" class="form-control"><?php echo $kurikulum['tambahan'] ?></textarea>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-3">Satuan Acara Perkuliahan</label>
+		<div class="col-9">
+			<textarea name="satuanacara" placeholder="Satuan Acara Perkuliahan" class="form-control konten"><?php echo $kurikulum['satuanacara'] ?></textarea>
 		</div>
 	</div>
 

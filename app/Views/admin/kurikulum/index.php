@@ -8,8 +8,8 @@
 			<th width="5%">No</th>
 			<th width="5%">File</th>
 			<th width="20%">Nama</th>
-			<th width="20%">Jabatan</th>
-			<th width="30%">Kontak</th>
+			<th width="20%">Kode Matkul</th>
+			<th width="30%">Penyelenggara</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -26,15 +26,12 @@
 				</td>
 				<td><?php echo $kurikulum['namam'] ?>
 					<small>
-						<br><i class="fa fa-sitemap"></i> Jenis: <?php echo $kurikulum['nama_kategori_kurikulum'] ?>
-						<br><i class="fa fa-home"></i> Fungsional: <?php echo $kurikulum['naming'] ?>
+						<br><i class="fa fa-flag-usa"></i> <?php echo $kurikulum['naming'] ?>
+						<!-- <br><i class="fa fa-sitemap"></i> Jenis: <?php echo $kurikulum['nama_kategori_kurikulum'] ?> -->
 					</small>
 				</td>
-				<td><?php echo $kurikulum['fakul'] ?></td>
-				<td><small><i class="fa fa-phone"></i> <?php echo $kurikulum['silring'] ?>
-						<br><i class="fa fa-envelope"></i> <?php echo $kurikulum['silriing'] ?>
-						<br><i class="fa fa-globe"></i> <?php echo $kurikulum['silleng'] ?>
-						<br><i class="fas fa-user-graduate"></i> <?php echo $kurikulum['silling'] ?>
+				<td><?php echo $kurikulum['kodem'] ?></td>
+				<td><small><?= $kurikulum['kodep'] ?> - <?= $kurikulum['namap'] ?> / <?= $kurikulum['fakul'] ?>
 					</small>
 				</td>
 				<td>

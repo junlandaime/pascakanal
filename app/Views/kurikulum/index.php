@@ -49,7 +49,7 @@
                 foreach ($kurikulum as $kurikulum) { ?>
                   <tr>
                     <td><?php echo $no ?></td>
-                    <td><?php echo $kurikulum['kodem'] ?>
+                    <td><a href="<?php echo base_url('kurikulum/' . $kurikulum['slug_namam']) ?>"><?php echo $kurikulum['kodem'] ?></a>
 
                     </td>
                     <td><?php echo $kurikulum['namam'] ?>
@@ -57,15 +57,12 @@
                         <br><i class="fa fa-home"></i> <?php echo $kurikulum['naming'] ?>
                       </small>
                     </td>
-                    <td><?php echo $kurikulum['silring'] ?></td>
-                    <td><i class="fa fa-phone"></i> <?php echo $kurikulum['pustaka'] ?>
+                    <td><small><?php echo $kurikulum['silring'] ?></small></td>
+                    <td><i class="fa fa-phone"></i> <small><?php echo $kurikulum['pustaka'] ?></small>
 
                     </td>
-                    <td><?php if ($kurikulum['gambar'] == "") {
-                          echo '-';
-                        } else { ?>
-                        <a target="_blank" href="<?php echo base_url('kurikulum/' . $kurikulum['id_kurikulum']) ?>" class="btn btn-success btn-sm"><i class="fa fa-download"></i> Detail</a>
-                      <?php } ?>
+                    <td> <a target="_blank" href="<?php echo base_url('kurikulum/' . $kurikulum['slug_namam']) ?>" class="btn btn-success btn-sm"><i class="fa fa-download"></i> Detail</a>
+
                     </td>
                   </tr>
                 <?php $no++;
@@ -80,6 +77,8 @@
     </div>
 
     <!-- End Doctors Section -->
+
+
 
 
   </main><!-- End #main -->

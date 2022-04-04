@@ -147,7 +147,7 @@ $layanan      = $menu->layanan();
     <div class="container">
       <div class="row animate-box">
         <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-          <h2>Our People</h2>
+          <h2>Our Profile</h2>
           <p>Bisa diisi dengan kalimat pembuka terkait orang-orang kami.</p>
         </div>
       </div>
