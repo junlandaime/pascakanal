@@ -62,6 +62,8 @@ $site         = $konfigurasi->listing();
 
 
 
+
+
   <!-- Magnific Popup -->
   <link rel="stylesheet" href="<?= base_url(); ?>/assets/template/css/magnific-popup.css">
 

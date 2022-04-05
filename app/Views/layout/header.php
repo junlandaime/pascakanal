@@ -41,17 +41,17 @@ $menu_layanan  = $menu->layanan();
               <li class=""><a href="<?php echo base_url() ?>">Home</a></li>
 
               <li class="has-dropdown">
-                <a href="#">Profil</a>
+                <a href="#">Profile</a>
                 <ul class="dropdown">
                   <?php foreach ($menu_profil as $menu_profil) { ?>
                     <li><a href="<?php echo base_url('berita/profil/' . $menu_profil['slug_berita']) ?>"><?php echo $menu_profil['judul_berita'] ?></a></li>
                   <?php } ?>
-                  <li><a href="<?php echo base_url('kurikulum') ?>">Curriculum</a></li>
+                  <!-- <li><a href="<?php echo base_url('kurikulum') ?>">Curriculum</a></li> -->
                 </ul>
               </li>
 
               <li class="has-dropdown">
-                <a href="<?php echo base_url('berita') ?>">Informasi</a>
+                <a href="<?php echo base_url('berita') ?>">Information</a>
                 <ul class="dropdown">
                   <?php foreach ($menu_berita as $menu_berita) { ?>
                     <li><a href="<?php echo base_url('berita/kategori/' . $menu_berita['slug_kategori']) ?>"><?php echo $menu_berita['nama_kategori'] ?></a></li>
@@ -60,7 +60,7 @@ $menu_layanan  = $menu->layanan();
               </li>
 
               <li class="has-dropdown">
-                <a href="#">Facilities</a>
+                <a href="#">Research &amp; Collaboration</a>
                 <ul class="dropdown">
                   <?php foreach ($menu_layanan as $menu_layanan) { ?>
                     <li><a href="<?php echo base_url('berita/layanan/' . $menu_layanan['slug_berita']) ?>"><?php echo $menu_layanan['judul_berita'] ?></a></li>
@@ -69,14 +69,15 @@ $menu_layanan  = $menu->layanan();
               </li>
 
               <li class="has-dropdown">
-                <a href="#"><span>Galeri &amp; Video</span></a>
+                <a href="#"><span>Gallery &amp; Video</span></a>
                 <ul class="dropdown">
-                  <li><a href="<?php echo base_url('galeri') ?>">Galeri Gambar</a></li>
-                  <li><a href="<?php echo base_url('video') ?>">Galeri Video</a></li>
+                  <li><a href="<?php echo base_url('galeri') ?>">Gallery Photo </a></li>
+                  <li><a href="<?php echo base_url('video') ?>">Gallery Video</a></li>
+                  <li><a href="<?php echo base_url('download') ?>">Gallery Files</a></li>
                 </ul>
               </li>
-              <li><a href="<?php echo base_url('download') ?>">Download</a></li>
-              <li><a href="<?php echo base_url('kontak') ?>">kontak</a></li>
+
+              <li><a href="<?php echo base_url('kontak') ?>">Contact</a></li>
               <li class="btn-cta"><a href="<?php echo base_url('login') ?>"><span>Admin</span></a></li>
               <!-- <li class="btn-cta"><a href="#"><span>Create a Course</span></a></li> -->
             </ul>

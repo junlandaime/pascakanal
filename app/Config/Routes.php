@@ -35,6 +35,7 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/lecture/(:segment)', 'Lecture::index/$1');
 $routes->get('/kurikulum/(:segment)', 'kurikulum::detail/$1');
+$routes->get('/berita/profil/curriculum', 'Kurikulum');
 
 /*
  * --------------------------------------------------------------------

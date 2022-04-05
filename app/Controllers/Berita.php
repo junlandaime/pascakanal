@@ -24,9 +24,9 @@ class Berita extends BaseController
 		$slider 		= $m_galeri->slider();
 
 		$data = [
-			'title'			=> 'Berita ' . $konfigurasi['namaweb'],
-			'description'	=> 'Berita ' . $konfigurasi['namaweb'],
-			'keywords'		=> 'Berita ' . $konfigurasi['namaweb'],
+			'title'			=> 'Information ' . $konfigurasi['namaweb'],
+			'description'	=> 'Information ' . $konfigurasi['namaweb'],
+			'keywords'		=> 'Information ' . $konfigurasi['namaweb'],
 			'berita'		=> $berita,
 			'slider'		=> $slider,
 			'content'		=> 'berita/index'
