@@ -17,9 +17,9 @@ class Kontak extends BaseController
 		$konfigurasi 	= $m_konfigurasi->listing();
 
 		$data = [
-			'title'			=> 'Kontak Kami',
-			'description'	=> 'Kontak Kami ' . $konfigurasi['namaweb'] . ', ' . $konfigurasi['tentang'],
-			'keywords'		=> 'Kontak Kami ' . $konfigurasi['namaweb'] . ', ' . $konfigurasi['keywords'],
+			'title'			=> 'Our Contact',
+			'description'	=> 'Our Contact ' . $konfigurasi['namaweb'] . ', ' . $konfigurasi['tentang'],
+			'keywords'		=> 'Our Contact ' . $konfigurasi['namaweb'] . ', ' . $konfigurasi['keywords'],
 			'slider'		=> $slider,
 			'konfigurasi'	=> $konfigurasi,
 			'content'		=> 'kontak/index'

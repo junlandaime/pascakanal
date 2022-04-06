@@ -29,7 +29,14 @@
   <!-- End Breadcrumbs Section -->
   <script type="text/javascript">
     $(function() {
-      $('#gallery').jGallery();
+      $('#gallery').jGallery({
+        "backgroundColor": "000000",
+        "textColor": "1F96FF",
+        "thumbnailsPosition": "bottom",
+
+        browserHistory: false,
+        slideshow: true
+      });
     });
   </script>
   <!-- <?php var_dump($kategori) ?> -->

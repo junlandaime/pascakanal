@@ -41,7 +41,7 @@ $menu_layanan  = $menu->layanan();
               <li class=""><a href="<?php echo base_url() ?>">Home</a></li>
 
               <li class="has-dropdown">
-                <a href="#">Profile</a>
+                <a>Profile</a>
                 <ul class="dropdown">
                   <?php foreach ($menu_profil as $menu_profil) { ?>
                     <li><a href="<?php echo base_url('berita/profil/' . $menu_profil['slug_berita']) ?>"><?php echo $menu_profil['judul_berita'] ?></a></li>
@@ -60,7 +60,7 @@ $menu_layanan  = $menu->layanan();
               </li>
 
               <li class="has-dropdown">
-                <a href="#">Research &amp; Collaboration</a>
+                <a>Research &amp; Collaboration</a>
                 <ul class="dropdown">
                   <?php foreach ($menu_layanan as $menu_layanan) { ?>
                     <li><a href="<?php echo base_url('berita/layanan/' . $menu_layanan['slug_berita']) ?>"><?php echo $menu_layanan['judul_berita'] ?></a></li>
@@ -69,7 +69,7 @@ $menu_layanan  = $menu->layanan();
               </li>
 
               <li class="has-dropdown">
-                <a href="#"><span>Gallery &amp; Video</span></a>
+                <a><span>Gallery &amp; Video</span></a>
                 <ul class="dropdown">
                   <li><a href="<?php echo base_url('galeri') ?>">Gallery Photo </a></li>
                   <li><a href="<?php echo base_url('video') ?>">Gallery Video</a></li>

@@ -13,9 +13,9 @@ $site         = $konfigurasi->listing();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><?php echo $title ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta content="<?php echo strip_tags($description) ?>" name="description" content="Free HTML5 Website Template by freehtml5.co" />
+  <meta content="<?php echo strip_tags($description) ?>" name="description" content="" />
   <meta name="keywords" content="<?php echo $keywords ?>" />
-  <meta name="author" content="freehtml5.co" />
+  <meta name="author" content="" />
 
   <!-- 
 	//////////////////////////////////////////////////////

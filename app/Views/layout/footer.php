@@ -22,17 +22,17 @@ $menu_layanan  = $menu->layanan();
         <p><?php echo $site['deskripsi'] ?></p>
       </div>
       <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-        <h4><?php echo $site['namaweb'] ?></h4>
+        <h4><?php echo $site['namaweb'] ?> Profile</h4>
         <ul class="fh5co-footer-links">
           <?php foreach ($menu_profil as $menu_profil) { ?>
             <li><a href="<?php echo base_url('berita/profil/' . $menu_profil['slug_berita']) ?>"><?php echo $menu_profil['judul_berita'] ?></a></li>
           <?php } ?>
-          <li><a href="<?php echo base_url('kurikulum') ?>">Our Curicullum</a></li>
+
         </ul>
       </div>
 
       <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-        <h4>Facility</h4>
+        <h4>Research &amp; Collaboration</h4>
         <ul class="fh5co-footer-links">
           <?php foreach ($menu_layanan as $menu_layanan) { ?>
             <li><a href="<?php echo base_url('berita/layanan/' . $menu_layanan['slug_berita']) ?>"><?php echo $menu_layanan['judul_berita'] ?></a></li>
@@ -42,12 +42,12 @@ $menu_layanan  = $menu->layanan();
 
 
       <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-        <h4>Our Activity</h4>
+        <h4>Our Gallery</h4>
         <ul class="fh5co-footer-links">
-          <li><a href="<?php echo base_url('galeri') ?>">Galeri Gambar</a></li>
-          <li><a href="<?php echo base_url('video') ?>">Galeri Video</a></li>
-          <li><a href="<?php echo base_url('download') ?>">Download File</a></li>
-          <li><a href="<?php echo base_url('kontak') ?>">Kontak Kami</a></li>
+          <li><a href="<?php echo base_url('galeri') ?>">Gallery Photos</a></li>
+          <li><a href="<?php echo base_url('video') ?>">Gallery Video</a></li>
+          <li><a href="<?php echo base_url('download') ?>">Gallery File</a></li>
+          <li><a href="<?php echo base_url('kontak') ?>">Our Contact</a></li>
         </ul>
       </div>
 

@@ -8,7 +8,7 @@
           <div class="display-t">
             <div class="display-tc animate-box" data-animate-effect="fadeIn">
               <h1><?php echo $title ?></h1>
-              <h2>Free html5 templates Made by <a href="http://freehtml5.co" target="_blank">freehtml5.co</a></h2>
+              <h2><?php echo $berita['ringkasan'] ?></h2>
             </div>
           </div>
         </div>
