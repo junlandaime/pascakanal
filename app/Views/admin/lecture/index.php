@@ -38,7 +38,7 @@
 					</small>
 				</td>
 				<td>
-					<a href="<?php echo base_url('admin/lecture/edit/' . $lecture['id_lecture']) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+					<a href="<?php echo base_url('admin/lecture/edit/' . $lecture['slug_nama']) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
 					<a href="<?php echo base_url('admin/lecture/delete/' . $lecture['id_lecture']) ?>" class="btn btn-dark btn-sm" onclick="confirmation(event)"><i class="fa fa-trash"></i></a>
 				</td>
 			</tr>

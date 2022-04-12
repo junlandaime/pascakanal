@@ -14,16 +14,48 @@ $layanan      = $menu->layanan();
 <?php foreach ($slider as $slide) { ?>
   <?php if ($slide['judul_galeri'] == 'SlideHome') { ?>
 
-    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(<?php echo base_url('assets/upload/image/' . $slide['gambar']) ?>);" data-stellar-background-ratio="0.5">
+    <header id="fh5co-testimonial" class="fh5co-bg-section" style="background-image:url(<?php echo base_url('assets/upload/image/' . $slide['gambar']) ?>);" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
-          <div class="col-md-8 col-md-offset-2 text-center">
-            <div class="display-t">
-              <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                <h1><?php echo $slide['isi'] ?></h1>
-                <!-- <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2> -->
-                <p><a class="btn btn-primary btn-lg btn-learn" href="#">Get Started</a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://vimeo.com/channels/staffpicks/93951774"><i class="icon-book"></i> Curicullum</a></p>
+          <div class="col-md-10 col-md-offset-1">
+            <div class="row animate-box">
+              <div class="owl-carousel owl-carousel-fullwidth">
+                <div class="item">
+                  <div id="fh5co-header" style="margin-top: 4cm;" data-stellar-background-ratio="0.5">
+                    <div class="overlay"></div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                      <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                          <h1><?= $slide['isi'] ?></h1>
+                          <p><a class="btn btn-primary btn-lg btn-learn" href="#">Take A Course</a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href=""><i class="icon-play"></i> Watch Video</a></p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              <?php } ?>
+            <?php } ?>
+            <?php foreach ($slider as $slid) { ?>
+              <?php if ($slid['judul_galeri'] == 'SlideHomeNews') { ?>
+                <div class="item">
+                  <div id="fh5co-header" style="margin-top: 4cm;" data-stellar-background-ratio="0.5">
+                    <div class="overlay"></div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                      <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                          <h1><?= $slid['isi'] ?></h1>
+                          <p><a class="btn btn-primary btn-lg btn-learn" href="<?= $slid['website'] ?>">Info Detail</a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="<?php echo base_url('assets/upload/image/' . $slid['gambar']) ?>"><i class="icon-play"></i> Watch Info</a></p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
